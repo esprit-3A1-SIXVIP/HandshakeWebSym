@@ -1,0 +1,73 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{% extends 'base.html.twig' %}
+
+{% block container2 %}
+<div id="tr-home">
+<div id="contact">
+    <div class="container">
+        <div class="section-title">
+            <h1>Contact Us</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="row contact-details">
+                    <div class="col-md-4">
+                        <span><i class="fa fa-map-marker"></i></span>
+                        <p class="contact-info">1234 Street Name, City Name</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span><i class="fa fa-phone"></i></span>
+                        <p class="contact-info">+(123) 456-7890 </p>
+                    </div>
+                    <div class="col-md-4">
+                        <span><i class="fa fa-envelope"></i></span>
+                        <a class="contact-info" href="#"><span class="__cf_email__" data-cfemail="294a46475d484a5d69415c444847405d50074a4644">[email&#160;protected]</span></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+    <div class="login-register-area pt-70 pb-75">
+    <div class="container">
+    <div class="row">
+    <div class="col-lg-7 col-md-12 ml-auto mr-auto">
+    <div class="login-register-wrapper">
+
+    <div class="tab-content">
+    <div id="lg1" class="tab-pane active">
+    <div class="login-form-container">
+    <div class="login-register-form">
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+        <form id="contact-form" class="contact-form" name="contact-form" method="post" action="{{ path("fos_user_security_check") }}">
+        {% if csrf_token %}
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+        {% endif %}
+
+        <label   for="username">{{ 'security.login.username'|trans }}</label>
+        <input class='form-control' type="text" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
+
+        <label for="password">{{ 'security.login.password'|trans }}</label>
+        <input class='form-control' type="password" id="password" name="_password" required="required" autocomplete="current-password" />
+
+        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+        <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+
+        <input  class='btn btn-primary' type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+    </form>
+
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+            </div>
+        </div>
+        </div>
+    </div>
+{% endblock %}
