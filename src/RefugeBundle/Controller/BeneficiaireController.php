@@ -124,4 +124,13 @@ class BeneficiaireController extends Controller
             ->getForm()
         ;
     }
+    public function indexbackAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $beneficiaires = $em->getRepository('RefugeBundle:Beneficiaire')->findAll();
+        return $this->render('@Refuge/back/afficherref.html.twig', array(
+            'beneficiaires' => $beneficiaires,
+        ));
+    }
+
 }

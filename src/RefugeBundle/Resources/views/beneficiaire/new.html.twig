@@ -1,11 +1,145 @@
-
-
-{% block body %}
-    <h1>Beneficiaire creation</h1>
-
+{% extends 'form.html.twig' %}
+{% block container2 %}
+    <body style="font-family: 'Roboto', sans-serif;
+	background: url({{ asset('images/mountain.jpg')}}) no-repeat center center fixed;
+	background-size: cover;">
+    <div class="container center" style="height:1000px; width:700px; ">
+        <div class=" col-lg-offset-4">
+            <div class="mb-30">
+                <!--entete incription --evenement--
+                    ------------------------------>
+                <h3 class="text-center txt-dark mb-10">Ajouter Refugie</h3>
+                <h6 class="text-center nonecase-font txt-grey">Entrer les informations du Refugié</h6>
+            </div>
+            <div class="form-wrap">
     {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+{% set class='' %}
+        {% if not form.nombeneficiaire.vars.valid  %}
+        {% set class='has-error' %}
+        {% endif %}
+                <div class="col-md-6">
+   <div class="form-group row {{ class }}">
+       {{ form_label(form.nombeneficiaire,'Nom du Refugié',{'label_atr':{'class':'control-label mb-10'}}) }}
+       {{ form_widget(form.nombeneficiaire,{attr:{'class':'form-control'}}) }}
+       {{ form_errors(form.nombeneficiaire) }}
+   </div>
+                </div>
+        {% set class='' %}
+        {% if not form.prenombeneficiaire.vars.valid  %}
+            {% set class='has-error' %}
+        {% endif %}
+                <div class="col-md-6">
+                    <div class="form-group row {{ class }}">
+        {{ form_label(form.prenombeneficiaire,'Prenom refugié',{'label_atr':{'class':'control-label'}}) }}
+        {{ form_widget(form.prenombeneficiaire,{attr:{'class':'form-control'}}) }}
+        {{ form_errors(form.prenombeneficiaire) }}
+    </div>
+                </div>
+        {% set class='' %}
+        {% if not form.email.vars.valid  %}
+            {% set class='has-error' %}
+        {% endif %}
+                <div class="col-md-6">
+                    <div class="form-group row {{ class }}">
+        {{ form_label(form.email,'email a contacter',{'label_atr':{'class':'control-label'}}) }}
+        {{ form_widget(form.email,{attr:{'class':'form-control'}}) }}
+        {{ form_errors(form.email) }}
+    </div>
+                </div>
+        {% set class='' %}
+        {% if not form.nombeneficiaire.vars.valid  %}
+            {% set class='has-error' %}
+        {% endif %}
+                <div class="col-md-6">
+                    <div class="form-group row {{ class }}">
+        {{ form_label(form.datenaissance,'date naissance',{'label_atr':{'class':'control-label'}}) }}
+        {{ form_widget(form.datenaissance,{attr:{'class':'form-control'}}) }}
+        {{ form_errors(form.datenaissance) }}
+    </div>
+                </div>
+        {% set class='' %}
+        {% if not form.ville.vars.valid  %}
+            {% set class='has-error' %}
+        {% endif %}
+                <div class="col-md-6">
+                    <div class="form-group row {{ class }}">
+        {{ form_label(form.ville,'ville refugié',{'label_atr':{'class':'control-label'}}) }}
+        {{ form_widget(form.ville,{attr:{'class':'form-control'}}) }}
+        {{ form_errors(form.ville) }}
+    </div>
+                </div>
+        {% set class='' %}
+        {% if not form.telephone.vars.valid  %}
+            {% set class='has-error' %}
+        {% endif %}
+                <div class="col-md-6">
+                    <div class="form-group row {{ class }}">
+        {{ form_label(form.telephone,'telephone refugié',{'label_atr':{'class':'control-label'}}) }}
+        {{ form_widget(form.telephone,{attr:{'class':'form-control'}}) }}
+        {{ form_errors(form.telephone) }}
+    </div>
+                </div>
+        {% set class='' %}
+        {% if not form.adressegps.vars.valid  %}
+            {% set class='has-error' %}
+        {% endif %}
+                <div class="col-md-6">
+                    <div class="form-group row {{ class }}">
+        {{ form_label(form.adressegps,'adresse refugié',{'label_atr':{'class':'control-label'}}) }}
+        {{ form_widget(form.adressegps,{attr:{'class':'form-control'}}) }}
+        {{ form_errors(form.adressegps) }}
+    </div>
+                </div>
+        {% set class='' %}
+        {% if not form.role.vars.valid  %}
+            {% set class='has-error' %}
+        {% endif %}
+                <div class="col-md-6">
+                    <div class="form-group row {{ class }}">
+        {{ form_label(form.role,'role',{'label_atr':{'class':'control-label'}}) }}
+        {{ form_widget(form.role,{attr:{'class':'form-control'}}) }}
+        {{ form_errors(form.role) }}
+    </div>
+                </div>
+        {% set class='' %}
+        {% if not form.besoin.vars.valid  %}
+            {% set class='has-error' %}
+        {% endif %}
+                <div class="col-md-6">
+                    <div class="form-group row {{ class }}">
+        {{ form_label(form.besoin,'besoin du refugié',{'label_atr':{'class':'control-label'}}) }}
+        {{ form_widget(form.besoin,{attr:{'class':'form-control'}}) }}
+        {{ form_errors(form.besoin) }}
+    </div>
+                </div>
+        {% set class='' %}
+        {% if not form.nationalite.vars.valid  %}
+            {% set class='has-error' %}
+        {% endif %}
+                <div class="col-md-6">
+                    <div class="form-group row {{ class }}">
+        {{ form_label(form.nationalite,'Nationalité du Refugié',{'label_atr':{'class':'control-label'}}) }}
+        {{ form_widget(form.nationalite,{attr:{'class':'form-control'}}) }}
+        {{ form_errors(form.nationalite) }}
+    </div>
+                </div>
+        {% set class='' %}
+        {% if not form.userid.vars.valid  %}
+            {% set class='has-error' %}
+        {% endif %}
+                <div class="col-md-6">
+    <div class="form-group row {{ class }}">
+        {{ form_label(form.userid,'Username',{'label_atr':{'class':'control-label '}}) }}
+        {{ form_widget(form.userid,{attr:{'class':'form-control '}}) }}
+        {{ form_errors(form.userid) }}
+    </div>
+                </div>
+                <div class="col-md-6">
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-warning btn-rounded">ajouter</button>
+                </div>
+                </div>
+            </div>
     {{ form_end(form) }}
 
     <ul>
@@ -13,4 +147,7 @@
             <a href="{{ path('beneficiaire_index') }}">Back to the list</a>
         </li>
     </ul>
+        </div>
+    </div>
+    </body>
 {% endblock %}

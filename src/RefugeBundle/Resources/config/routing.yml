@@ -21,3 +21,6 @@ beneficiaire_show:
 beneficiaire_delete:
     path:   /delete/{beneficiaireid}
     defaults: {_controller: RefugeBundle:Beneficiaire:delete}
+refuge_homepage_back:
+    path:     /backrefuge
+    defaults: { _controller: RefugeBundle:Beneficiaire:indexback }
