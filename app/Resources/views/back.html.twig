@@ -12,7 +12,6 @@
     <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
     <!-- Plugins css -->
     <link href="{{ asset('assets/libs/flatpickr/flatpickr.min.css') }}" rel="stylesheet" type="text/css" />
-
     <!-- App css -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
@@ -151,7 +150,7 @@
 
                 <li class="dropdown notification-list">
                     <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                        <img src="assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle">
+                        <img src="{{ asset('assets/images/users/user-1.jpg')}}" alt="user-image" class="rounded-circle">
                         <span class="pro-user-name ml-1">
                                     Geneva <i class="mdi mdi-chevron-down"></i>
                                 </span>
@@ -1111,7 +1110,12 @@
 <script src="{{asset('assets/js/pages/dashboard-1.init.js')}}"></script>
 
 <!-- App js-->
-<script src="{{asset('assets/js/app.min.js')}}"></script>
+<script src="{{asset('assets/js/app.min.js')}}"> </script>
+    <!-- Bootstrap Tables js -->
+        <script src="{{asset('assets/libs/bootstrap-table/bootstrap-table.min.js')}}"></script>
+
+        <!-- Init js -->
+        <script src="{{asset('assets/js/pages/bootstrap-tables.init.js')}}"></script>
 {% endblock %}
 </body>
 </html>

@@ -21,7 +21,7 @@ class BeneficiaireController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $beneficiaires = $em->getRepository('RefugeBundle:Beneficiaire')->findAll();
+        $beneficiaires = $em->getRepository('RefugeBundle:Beneficiaire')->findBy(array('role'=>'refugié')) ;
 
         return $this->render('@Refuge/Beneficiaire/index.html.twig', array(
             'beneficiaires' => $beneficiaires,
@@ -40,6 +40,8 @@ class BeneficiaireController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $beneficiaire->setRole('refugié');
+            $beneficiaire->setBesoin('logement');
             $em->persist($beneficiaire);
             $em->flush();
 
@@ -127,10 +129,21 @@ class BeneficiaireController extends Controller
     public function indexbackAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $beneficiaires = $em->getRepository('RefugeBundle:Beneficiaire')->findAll();
+        $beneficiaires = $em->getRepository('RefugeBundle:Beneficiaire')->findBy(array('role'=>'refugié')) ;
         return $this->render('@Refuge/back/afficherref.html.twig', array(
             'beneficiaires' => $beneficiaires,
         ));
     }
+
+
+    public function deletebackAction($beneficiaireid)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $beneficiaire=$em->getRepository(Beneficiaire::class)->find($beneficiaireid);
+            $em->remove($beneficiaire);
+            $em->flush($beneficiaire);
+        return $this->redirectToRoute('refuge_homepage_back');
+    }
+
 
 }
