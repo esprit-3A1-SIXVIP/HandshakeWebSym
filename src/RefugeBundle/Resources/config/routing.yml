@@ -27,3 +27,13 @@ refuge_homepage_back:
 delete_refuge_back:
      path:   /backrefuge/{beneficiaireid}
      defaults: {_controller: RefugeBundle:Beneficiaire:deleteback}
+
+don_index:
+    path: /don
+    defaults: {_controller: RefugeBundle:Don:index}
+don_show:
+    path: /don
+    defaults: {_controller: RefugeBundle:Don:index}
+don_new:
+    path:   /add_don
+    defaults: { _controller: RefugeBundle:Don:new}
