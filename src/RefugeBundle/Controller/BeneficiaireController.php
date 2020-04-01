@@ -6,6 +6,7 @@ use RefugeBundle\Entity\Beneficiaire;
 use RefugeBundle\Form\BeneficiaireType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * Beneficiaire controller.
