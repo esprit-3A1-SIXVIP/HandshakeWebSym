@@ -1,0 +1,24 @@
+don_index:
+    path:     /
+    defaults: { _controller: "RefugeBundle:Don:index" }
+    methods:  GET
+
+don_show:
+    path:     /{donid}/show
+    defaults: { _controller: "RefugeBundle:Don:show" }
+    methods:  GET
+
+don_new:
+    path:     /new
+    defaults: { _controller: "RefugeBundle:Don:new" }
+    methods:  [GET, POST]
+
+don_edit:
+    path:     /{donid}/edit
+    defaults: { _controller: "RefugeBundle:Don:edit" }
+    methods:  [GET, POST]
+
+don_delete:
+    path:     /{donid}/delete
+    defaults: { _controller: "RefugeBundle:Don:delete" }
+    methods:  DELETE

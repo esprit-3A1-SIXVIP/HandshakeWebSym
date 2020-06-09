@@ -1,0 +1,139 @@
+{%  extends 'back.html.twig' %}
+{% block header %}
+    {{ parent() }}
+    <link href="{{ asset('assets/libs/bootstrap-table/bootstrap-table.min.css')}}" rel="stylesheet" type="text/css" />
+
+    <style>
+        /* Set the size of the div element that contains the map */
+        #map {
+            height: 300px;  /* The height is 300 pixels */
+            width: 100%;  /* The width is the width of the web page */
+        }
+    </style>
+
+{% endblock %}
+{%  block container %}
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyBEDfNcQRmKQEyulDN8nGWjLYPm8s4YB58&libraries=places"></script>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card-box">
+                <h4 class="header-title">Afficher les aide</h4>
+                <p class="sub-header mb-0">
+                    Aide
+                </p>
+                <div id="map">
+                    <script>
+
+                        var locations = [
+
+
+                            {% for a in Aide %}
+
+                            ['{{ a.localisationAide}}', {{ a.Latitude}} , {{ a.Longitude }}, 1],
+
+
+
+
+                            {% endfor %}
+
+
+                        ];
+
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                            zoom: 7,
+                            center: new google.maps.LatLng(34.39824207, 8.79656443),
+                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                        });
+
+                        var infowindow = new google.maps.InfoWindow();
+
+                        var marker, i;
+
+                        for (i = 0; i < locations.length; i++) {
+                            marker = new google.maps.Marker({
+                                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                                map: map
+                            });
+
+                            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                                return function() {
+                                    infowindow.setContent(locations[i][0]);
+                                    infowindow.open(map, marker);
+                                }
+                            })(marker, i));
+                        }
+                    </script></div>
+
+                <table data-toggle="table"
+                       data-search="true"
+                       data-show-refresh="true"
+                       data-sort-name="id"
+                       data-page-list="[5, 10, 20]"
+                       data-page-size="5"
+                       data-pagination="true" data-show-pagination-switch="true" class="table-borderless">
+                    <thead class="thead-light">
+                    <tr>
+                        <th data-field="id" data-sortable="true" data-formatter="invoiceFormatter">ID</th>
+                        <th data-sortable="true">Propriétaire</th>
+                        <th data-field="name" data-sortable="true">Description</th>
+                        <th data-sortable="true" >Localisation</th>
+                        <th data-field="amount" data-align="center" data-sortable="true" data-sorter="priceSorter">Categorie</th>
+                        <th data-field="date" data-align="center" data-sortable="true" >Statut</th>
+                        <th data-align="center" data-sortable="true" data-formatter="statusFormatter">Modifier</th>
+                        <th data-align="center" data-sortable="true" data-formatter="statusFormatter">Supprimer</th>
+
+                    </tr>
+                    </thead>
+
+
+                    <tbody>
+                    {% for a in Aide %}
+
+                    <tr>
+                        <td>{{ a.id }}</td>
+                        <td>{{ a.user }}</td>
+                        <td>{{ a.descriptionAide }}</td>
+                        <td>{{ a.localisationAide }}</td>
+                        <td>{{ a.categorieAide }}</td>
+                        {% if a.statutAide==0 %}
+                            <td><a class="btn waves-effect waves-light btn-warning" href="{{ path('approved', {'id': a.id }) }}">Non Approuvé</a></td>
+                        {% else %}
+                            <td><a class="btn waves-effect waves-light btn-success" href="{{ path('approved', {'id': a.id }) }}">Approuvé</a></td>
+                        {% endif %}
+                        <td><a class="btn waves-effect waves-light btn-warning" href="{{ path('modifAide', {'id': a.id }) }}">Modifier</a></td>
+                        <td><a class="btn waves-effect waves-light btn-danger" href="{{ path('suppAide', {'id': a.id }) }}">Suprimer</a></td>
+                    </tr>
+                    {% endfor %}
+
+                    </tbody>
+                    <div id="div_chart"></div>
+                    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                    <script type="text/javascript">
+                        {{ gc_draw(piechart, 'div_chart') }}
+                    </script>
+
+                </table>
+
+
+                <nav>
+                    <ul class="pagination">
+                        {{ knp_pagination_render(Aide) }}
+                    </ul>
+                </nav>
+
+            </div> <!-- end card-box-->
+        </div> <!-- end col-->
+    </div>
+    <!-- end row-->
+{% endblock %}
+{% block javascript %}
+{{ parent() }}
+
+<script src="{{ asset('assets/libs/bootstrap-table/bootstrap-table.min.js')}}"></script>
+
+<!-- Init js -->
+<script src="{{ asset('assets/js/pages/bootstrap-tables.init.js')}}"></script>
+
+
+{% endblock %}

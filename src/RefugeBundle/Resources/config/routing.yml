@@ -1,0 +1,20 @@
+refuge_homepage:
+    path:     /
+    defaults: { _controller: RefugeBundle:Default:index }
+
+refuge_homepage_back:
+    path:     /backrefuge
+    defaults: { _controller: RefugeBundle:Beneficiaire:indexback }
+delete_refuge_back:
+     path:   /backrefuge/{beneficiaireid}
+     defaults: {_controller: RefugeBundle:Beneficiaire:deleteback}
+
+don_index:
+    path: /don
+    defaults: {_controller: RefugeBundle:Don:index}
+don_show:
+    path: /don
+    defaults: {_controller: RefugeBundle:Don:index}
+don_new:
+    path:   /add_don
+    defaults: { _controller: RefugeBundle:Don:new}
