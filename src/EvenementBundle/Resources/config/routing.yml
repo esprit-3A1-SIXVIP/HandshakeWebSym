@@ -1,0 +1,38 @@
+
+evenement_homepage:
+    path:     /evenement
+    defaults: { _controller: EvenementBundle:Default:index }
+events:
+    path:     /events
+    defaults: { _controller: EvenementBundle:Default:events}
+AjoutEvenement:
+    path:     /AjoutEvenement
+    defaults: { _controller: EvenementBundle:Default:AjoutEvenement}
+calendar:
+    path:     /calendar
+    defaults: { _controller: EvenementBundle:Default:calendar}
+list:
+    path:     /list
+    defaults: { _controller: EvenementBundle:Default:list}
+task:
+    path:     /task
+    defaults: { _controller: EvenementBundle:Default:task}
+taskShow:
+    path:     /taskShow
+    defaults: { _controller: EvenementBundle:Default:taskShow}
+update:
+    path:     /update/{evenementId}
+    defaults: { _controller: EvenementBundle:Default:update}
+findEvent:
+    path:     /findEvent
+    defaults: { _controller: EvenementBundle:Default:findEvent}
+delete:
+    path:     /delete/{evenementId}
+    defaults: { _controller: EvenementBundle:Default:delete}
+consulter:
+    path:     /consulter/{evenementId}
+    defaults: { _controller: EvenementBundle:Default:consulter}
+
+
+
+

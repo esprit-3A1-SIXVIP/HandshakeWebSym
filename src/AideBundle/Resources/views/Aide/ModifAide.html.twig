@@ -1,0 +1,47 @@
+{%  extends 'back.html.twig' %}
+{%  block container %}
+    <div class="row">
+    <div class="col-12">
+    <div class="card">
+    <div class="card-body">
+    <h4 class="header-title">Input Types</h4>
+    <div class="row">
+        <div class="col-lg-6">
+            <div>
+                <a class="btn btn-outline-primary btn-rounded waves-effect waves-light" href="{{ path('affAide') }}">Afficher</a>
+            </div>
+            <a class="btn btn-outline-primary btn-rounded waves-effect waves-light" href="https://www.latlong.net/" >Lien pour vos aide a trouver Latitude et longitude d'une adresse</a>
+            {{ form_start(edit_form) }}
+            <div class="form-group mb-3">
+                            <label for="simpleinput">Description</label>
+                                {{ form_widget(edit_form.descriptionAide,{'attr':{'class':'form-control','placeholder':'Description'}}) }}
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="simpleinput">Localisation</label>
+                                {{ form_widget(edit_form.localisationAide,{'attr':{'class':'form-control','placeholder':'Localisation'}}) }}
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="simpleinput">Latitude</label>
+                                {{ form_widget(edit_form.Latitude,{'attr':{'class':'form-control','placeholder':'Latitude'}}) }}
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="simpleinput">Longitude</label>
+                                {{ form_widget(edit_form.Longitude,{'attr':{'class':'form-control','placeholder':'Longitude'}}) }}
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="simpleinput">Categorie</label>
+                                {{ form_widget(edit_form.categorieAide,{'attr':{'class':'form-control','placeholder':'Categorie'}}) }}
+                            </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Modifier</button>
+                        </div>
+                        {{ form_end(edit_form) }}
+                     </div> <!-- end col -->
+    </div>
+        <!-- end row-->
+
+    </div> <!-- end card-body -->
+    </div> <!-- end card -->
+    </div><!-- end col -->
+    </div>
+{% endblock %}
