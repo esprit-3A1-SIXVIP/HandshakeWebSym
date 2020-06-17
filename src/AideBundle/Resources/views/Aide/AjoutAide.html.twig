@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+{% block container %}
+    <div id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h1>Ajouter Aide</h1>
+            </div>
+            <div>
+                <a class="pull-right btn btn-primary" href="{{ path('affAideClient') }}">Afficher</a>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <h3 style="color:red" >   <a href="https://www.latlong.net/" >Lien pour vos aide a trouver Latitude et longitude d'une adresse</a></h3>
+
+                    <div class="contact-form">
+                            {{ form_start(form,{'attr':{'class':'contact-form','id':'contact-form'}}) }}
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    {{ form_widget(form.descriptionAide,{'attr':{'class':'form-control','placeholder':'Description'}}) }}
+                                    {{ form_widget(form.localisationAide,{'attr':{'class':'form-control','placeholder':'Localisation'}}) }}
+                                    {{ form_widget(form.Latitude,{'attr':{'class':'form-control','placeholder':'Latitude'}}) }}
+                                    {{ form_widget(form.Longitude,{'attr':{'class':'form-control','placeholder':'Longitude'}}) }}
+
+                                </div>
+                                <div class="form-group col-md-6">
+                                    {{ form_widget(form.categorieAide,{'attr':{'class':'form-control','placeholder':'Categorie'}}) }}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Ajouter</button>
+                            </div>
+                            {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--/#Contact-->
+{% endblock %}

@@ -1,0 +1,59 @@
+<html>
+<body>
+<link rel='stylesheet' href='https://bootswatch.com/4/materia/bootstrap.min.css'>
+<center>
+    <hr class = "my-4">
+    <img src="C:\wamp64\www\HandshakeWebSym-Samyra\web\images\icons\logo.png">
+    <hr class = "my-4">
+<h1> Historique de Dons</h1>
+    <hr class = "my-4">
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+
+        <th scope="col">Typedon</th>
+        <th scope="col">Cibledon</th>
+        <th scope="col">Montantdon</th>
+        <th scope="col">Libelledonnature</th>
+        <th scope="col">Categoriedonnature</th>
+        <th scope="col">Datedon</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for donEspece in donEspeces %}
+        {% if donEspece.typeDon == "espece" and donEspece.userId == app.user.id    %}
+            <tr class="table-primary">
+
+                <td>{{ donEspece.typeDon }}</td>
+                <td>{{ donEspece.cibleDon }}</td>
+                <td>{{ donEspece.montantDon }}</td>
+                <td></td>
+                <td></td>
+                <td>{% if donEspece.dateDon %}{{ donEspece.dateDon|date('Y-m-d') }}{% endif %}</td>
+
+            </tr>
+        {% endif %}
+    {% endfor %}
+    {% for donNature in donNatures %}
+        {% if donNature.typeDon == "nature" and donNature.userId == app.user.id %}
+            <tr class="table-primary">
+
+                <td>{{ donNature.typeDon }}</td>
+                <td>{{ donNature.cibleDon }}</td>
+                <td></td>
+                <td>{{ donNature.libelleDonNature }}</td>
+                <td>{{ donNature.categorieDonNature }}</td>
+                <td>{% if donNature.dateDon %}{{ donNature.dateDon|date('Y-m-d') }}{% endif %}</td>
+
+            </tr>
+        {% endif %}
+    {% endfor %}
+    </tbody>
+</table>
+    <hr class = "my-4">
+</center>
+
+</body>
+</html>

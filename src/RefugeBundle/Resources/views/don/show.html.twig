@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Don</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Donid</th>
+                <td>{{ don.donid }}</td>
+            </tr>
+            <tr>
+                <th>Typedon</th>
+                <td>{{ don.typedon }}</td>
+            </tr>
+            <tr>
+                <th>Montantdon</th>
+                <td>{{ don.montantdon }}</td>
+            </tr>
+            <tr>
+                <th>Cibledon</th>
+                <td>{{ don.cibledon }}</td>
+            </tr>
+            <tr>
+                <th>Libelledonnature</th>
+                <td>{{ don.libelledonnature }}</td>
+            </tr>
+            <tr>
+                <th>Categoriedonnature</th>
+                <td>{{ don.categoriedonnature }}</td>
+            </tr>
+            <tr>
+                <th>Ruerefuge</th>
+                <td>{{ don.ruerefuge }}</td>
+            </tr>
+            <tr>
+                <th>Villerefuge</th>
+                <td>{{ don.villerefuge }}</td>
+            </tr>
+            <tr>
+                <th>Paysrefuge</th>
+                <td>{{ don.paysrefuge }}</td>
+            </tr>
+            <tr>
+                <th>Longitude</th>
+                <td>{{ don.longitude }}</td>
+            </tr>
+            <tr>
+                <th>Latitude</th>
+                <td>{{ don.latitude }}</td>
+            </tr>
+            <tr>
+                <th>Disponibiliterefuge</th>
+                <td>{{ don.disponibiliterefuge }}</td>
+            </tr>
+            <tr>
+                <th>Capaciterefuge</th>
+                <td>{{ don.capaciterefuge }}</td>
+            </tr>
+            <tr>
+                <th>Quantitedonnature</th>
+                <td>{{ don.quantitedonnature }}</td>
+            </tr>
+            <tr>
+                <th>Datedon</th>
+                <td>{% if don.datedon %}{{ don.datedon|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Datedebutrefuge</th>
+                <td>{% if don.datedebutrefuge %}{{ don.datedebutrefuge|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Datefinrefuge</th>
+                <td>{% if don.datefinrefuge %}{{ don.datefinrefuge|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('don_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('don_edit', { 'donid': don.donid }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

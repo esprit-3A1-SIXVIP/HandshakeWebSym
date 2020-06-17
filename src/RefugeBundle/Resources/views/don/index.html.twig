@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Dons list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Donid</th>
+                <th>Typedon</th>
+                <th>Montantdon</th>
+                <th>Cibledon</th>
+                <th>Libelledonnature</th>
+                <th>Categoriedonnature</th>
+                <th>Ruerefuge</th>
+                <th>Villerefuge</th>
+                <th>Paysrefuge</th>
+                <th>Longitude</th>
+                <th>Latitude</th>
+                <th>Disponibiliterefuge</th>
+                <th>Capaciterefuge</th>
+                <th>Quantitedonnature</th>
+                <th>Datedon</th>
+                <th>Datedebutrefuge</th>
+                <th>Datefinrefuge</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for don in dons %}
+            <tr>
+                <td><a href="{{ path('don_show', { 'donid': don.donid }) }}">{{ don.donid }}</a></td>
+                <td>{{ don.typedon }}</td>
+                <td>{{ don.montantdon }}</td>
+                <td>{{ don.cibledon }}</td>
+                <td>{{ don.libelledonnature }}</td>
+                <td>{{ don.categoriedonnature }}</td>
+                <td>{{ don.ruerefuge }}</td>
+                <td>{{ don.villerefuge }}</td>
+                <td>{{ don.paysrefuge }}</td>
+                <td>{{ don.longitude }}</td>
+                <td>{{ don.latitude }}</td>
+                <td>{{ don.disponibiliterefuge }}</td>
+                <td>{{ don.capaciterefuge }}</td>
+                <td>{{ don.quantitedonnature }}</td>
+                <td>{% if don.datedon %}{{ don.datedon|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if don.datedebutrefuge %}{{ don.datedebutrefuge|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if don.datefinrefuge %}{{ don.datefinrefuge|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('don_show', { 'donid': don.donid }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('don_edit', { 'donid': don.donid }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('don_new') }}">Create a new don</a>
+        </li>
+    </ul>
+{% endblock %}

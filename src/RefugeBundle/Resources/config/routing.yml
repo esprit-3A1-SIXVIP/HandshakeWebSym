@@ -1,0 +1,39 @@
+refuge_homepage:
+    path:     /
+    defaults: { _controller: RefugeBundle:Default:index }
+
+beneficiaire_new:
+    path:   /add
+    defaults: { _controller: RefugeBundle:Beneficiaire:new}
+
+beneficiaire_index:
+    path:   /read
+    defaults: {_controller: RefugeBundle:Beneficiaire:index}
+
+beneficiaire_edit:
+    path:   /edit/{beneficiaireid}
+    defaults: {_controller: RefugeBundle:Beneficiaire:edit}
+
+beneficiaire_show:
+    path:   /show/{beneficiaireid}
+    defaults: {_controller: RefugeBundle:Beneficiaire:show}
+
+beneficiaire_delete:
+    path:   /delete/{beneficiaireid}
+    defaults: {_controller: RefugeBundle:Beneficiaire:delete}
+refuge_homepage_back:
+    path:     /backrefuge
+    defaults: { _controller: RefugeBundle:Beneficiaire:indexback }
+delete_refuge_back:
+     path:   /backrefuge/{beneficiaireid}
+     defaults: {_controller: RefugeBundle:Beneficiaire:deleteback}
+
+don_index:
+    path: /don
+    defaults: {_controller: RefugeBundle:Don:index}
+don_show:
+    path: /don
+    defaults: {_controller: RefugeBundle:Don:index}
+don_new:
+    path:   /add_don
+    defaults: { _controller: RefugeBundle:Don:new}

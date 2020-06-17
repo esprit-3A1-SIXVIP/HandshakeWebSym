@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <!--title-->
+    <title>Humanity | Bootstrap Responsive Onepage HTML Template</title>
+    {% block stylesheets %}
+        <link rel='stylesheet' href='https://bootswatch.com/4/materia/bootstrap.min.css'>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    {% endblock %}
+
+</head><!--/head-->
+
+<body>
+
+
+{% block header %}
+    <header id="navigation">
+        <nav class = "navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="index.html">
+                <h1><img class="img-fluid" src="{{ asset ('Front/images/logo-icon.png')}}" alt="logo"></h1>
+            </a>
+            <a class="navbar-brand" href="{{ asset('/Don') }}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;">Espace de Don </font> </font> </a>
+            <button class = "navbar-toggler" type = "button" data-toggle = "collapse" data-target = "# navbarColor01" aria-controls = "navbarColor01" aria-extended = "false" aria-label = "Basculer la navigation ">
+                <span class = "navbar-toggler-icon"> </span>
+            </button>
+
+            <div class = "collapse navbar-collapse" id = "navbarColor01">
+                <ul class = "navbar-nav mr-auto">
+                    <li class = "nav-item active">
+                        <a class="nav-link" href="{{ asset ('/') }}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> Accueil </font> </font> <span class = "sr-only"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> (actuel) </font> </font> </ span > </a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class="nav-link" href="{{ path('chat') }}"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> Chat </font> </font> </a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class="nav-link" href="#"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> Tarification </font> </font> </a>
+                    </li>
+                    <li class = "nav-item">
+                        <a class="nav-link" href="#"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> À propos de </font> </ police> </a>
+                    </li>
+                </ul>
+{#                <form class = "form-inline my-2 my-lg-0">#}
+{#                    <input class = "form-control mr-sm-2" type = "text" placeholder = "Chercher">#}
+{#                    <button class = "btn btn-secondary my-2 my-sm-0" type = "submit"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;">> Chercher </font> </font> </button>#}
+{#                </form>#}
+            </div>
+        </nav>
+    </header><!--/#navigation-->
+{% endblock %}
+
+
+<main>
+    <div class="main-section">
+        <div class="container">
+            {% block container %}
+            <div class = "jumbotron">
+                <p>{{ app.user.password }}</p>
+                <h1 class = "display-3"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> Type de Dons! </font> </font> </ h1>
+                <hr class = "my-4">
+                <p class = "lead"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> Choisissez le type de don que vous souhaitez effectuer. </font> </font> </p>
+                 <hr class = "my-4">
+                <div class="container" style="justify-content :center; display :flex" >
+                    <a class="nav-link" href="{{ path ('donespece_new')}}">
+                 <div class = "card border-primary mb-3" style = "max-width: 20rem;">
+                    <div class = "card-header" > <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> Don en Espèce</font> </font> </div>
+                 </div></a>
+                    <div><p>&nbsp&nbsp</p></div>
+                    <a class="nav-link" href="{{ path ('donnature_new')}}">
+                     <div class = "card text-white bg-primary mb-3" style = "max-width: 20rem;">
+                         <div class = "card-header"> <font style = "vertical-align: inherit;"> <font style = "vertical-align: inherit;"> Don Nature </font> </font> </div>
+                     </div></a>
+                 </div>
+            </div>
+
+            {% endblock %}
+        </div>
+    </div>
+</main>
+
+{#<div class="container">#}
+{#    <h1>AFSY - WebSockets and Symfony</h1>#}
+
+
+{#    <div id="ws-content-receiver"></div>#}
+{#    <input type="text" id="ws-content-to-send" placeholder=" Your message..."/>#}
+{#    <button id="ws-send-content">Send</button>#}
+{#</div>#}
+
+
+
+</body>
+
+{#<script type="text/javascript">#}
+{#    var wsUrl = '{{ ws_url }}';#}
+{#</script>#}
+{#<script type="text/javascript" src="{{ asset('bundles/don/js/sf-websocket.js') }}"></script>#}
+
+
+</html>
