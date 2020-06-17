@@ -20,10 +20,18 @@ class AppKernel extends Kernel
             new RefugeBundle\RefugeBundle(),
             new UserBundle\UserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
-
+            new FOS\CKEditorBundle\FOSCKEditorBundle(),
+            new Ob\HighchartsBundle\ObHighchartsBundle(),
+            new BlogBundle\BlogBundle(),
+            new AideBundle\AideBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
+            new DonBundle\DonBundle(),
+           new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
+           // new IK\AmChartsBundle\IKAmChartsBundle(),
         ];
 
-        if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
+        if (in_array($this->getEnvironment(), ['dev', 'php bin/console assets:install webtest'], true)) {
             $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();

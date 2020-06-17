@@ -1,0 +1,210 @@
+{%  extends 'back.html.twig' %}
+
+
+
+{% block container %}
+    <div class="wrapper">
+        <div class="container-fluid">
+
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box">
+{#                        <div class="page-title-right">#}
+{#                            <form class="form-inline">#}
+{#                                <div class="form-group">#}
+{#                                    <div class="input-group input-group-sm">#}
+{#                                        <input type="text" class="form-control shadow border-white" id="dash-daterange">#}
+{#                                        <div class="input-group-append">#}
+{#                                                <span class="input-group-text bg-primary border-primary text-white">#}
+{#                                                    <i class="mdi mdi-calendar-range font-13"></i>#}
+{#                                                </span>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <a href="javascript: void(0);" class="btn btn-primary btn-sm ml-2 font-14">#}
+{#                                    <i class="mdi mdi-autorenew"></i>#}
+{#                                </a>#}
+{#                                <a href="javascript: void(0);" class="btn btn-primary btn-sm ml-1 font-14">#}
+{#                                    <i class="mdi mdi-filter-variant"></i>#}
+{#                                </a>#}
+{#                            </form>#}
+{#                        </div>#}
+                        <h4 class="page-title">Dashboard</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- end page title -->
+
+            <div class="row">
+                <div class="col-md-6 col-xl-3">
+                    <div class="widget-rounded-circle card-box">
+                        <a  href="{{ path('donadmin_homepage') }}">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="avatar-lg rounded-circle bg-soft-info border-info border">
+                                    <i class="fe-heart font-22 avatar-title text-info"></i>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="text-right">
+                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">{{ taille }}</span></h3>
+                                    <p class="text-muted mb-1 text-truncate">Total Don</p>
+                                </div>
+                            </div>
+                        </div> <!-- end row-->
+                        </a>
+                    </div> <!-- end widget-rounded-circle-->
+                </div> <!-- end col-->
+
+                <div class="col-md-6 col-xl-3">
+                    <div class="widget-rounded-circle card-box">
+                        <a  href="{{ path('chat') }}">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="avatar-lg rounded-circle bg-soft-primary border-primary border">
+                                    <svg class="bi bi-chat-dots-fill" width="5em" height="5em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 01-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 11-2 0 1 1 0 012 0zm4 0a1 1 0 11-2 0 1 1 0 012 0zm3 1a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="text-right">
+                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">Chat </span></h3>
+                                    <p class="text-muted mb-1 text-truncate">Anonyme</p>
+                                </div>
+                            </div>
+                        </div> <!-- end row-->
+                        </a>
+                    </div> <!-- end widget-rounded-circle-->
+                </div> <!-- end col-->
+
+                <div class="col-md-6 col-xl-3">
+                    <div class="widget-rounded-circle card-box">
+                        <a  href="{{ path('statistique') }}">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="avatar-lg rounded-circle bg-soft-info border-info border">
+                                    <i class="fe-bar-chart-line- font-22 avatar-title text-info"></i>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="text-right">
+                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">Statistiques</span></h3>
+                                    <p class="text-muted mb-1 text-truncate"></p>
+                                </div>
+                            </div>
+                        </div> <!-- end row-->
+                        </a>
+                    </div> <!-- end widget-rounded-circle-->
+                </div> <!-- end col-->
+
+
+                <div class="col-md-6 col-xl-3">
+                    <div class="widget-rounded-circle card-box">
+                        <a  href="{{ path('historiqueAdmin') }}">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="avatar-lg rounded-circle bg-soft-primary border-primary border">
+                                    <i class="fe-eye font-22 avatar-title text-primary"></i>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="text-right">
+                                    <h3 class="text-dark mt-1"><span data-plugin="counterup">Historique</span></h3>
+                                    <p class="text-muted mb-1 text-truncate">Telecharger</p>
+                                </div>
+                            </div>
+                        </div> <!-- end row-->
+                        </a>
+                    </div> <!-- end widget-rounded-circle-->
+                </div> <!-- end col-->
+
+            </div>
+            <!-- end row-->
+
+            <!-- end row -->
+
+    <hr class = "my-4">
+{#    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">#}
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
+            <hr>
+            <hr>
+    <table id="table"
+           data-toggle="table"
+           data-search="true"
+           data-show-columns="true"
+           data-buttons-align="center"
+           data-pagination="true"
+           data-pagination-h-align="left"
+           data-pagination-detail-h-align="right"
+           class="table table-hover">
+        <thead>
+        <tr>
+{#            <th scope="col">Id</th>#}
+            <th data-sortable="true" scope="col">UserName</th>
+            <th data-sortable="true" scope="col">Typedon</th>
+            <th data-sortable="true" scope="col">Cibledon</th>
+            <th data-sortable="true" scope="col">Montantdon</th>
+            <th scope="col">Libelledonnature</th>
+            <th data-sortable="true" scope="col">Categoriedonnature</th>
+            <th data-sortable="true" scope="col">Datedon</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for donEspece in donEspeces %}
+            {% if donEspece.typeDon == "espece" %}
+                {% for user in users %}
+                {% if user.id == donEspece.userId %}
+                <tr class="table-primary">
+{#                    <td><a href="{{ path('donespece_show', { 'id': donEspece.id }) }}">{{ donEspece.id }}</a></td>#}
+                    <td>{{ user.username }}</td>
+                    <td>{{ donEspece.typeDon }}</td>
+                    <td>{{ donEspece.cibleDon }}</td>
+                    <td>{{ donEspece.montantDon }}</td>
+                    <td></td>
+                    <td></td>
+                    <td>{% if donEspece.dateDon %}{{ donEspece.dateDon|date('Y-m-d') }}{% endif %}</td>
+                    <td>
+                        <a class="btn btn-outline-primary" href="{{ path('donespece_show', { 'id': donEspece.id }) }}">show</a>
+                        <hr class = "my-4">
+{#                        <a class="btn btn-outline-primary" href="{{ path('donespece_edit', { 'id': donEspece.id }) }}">edit</a>#}
+
+                    </td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+        {% for donNature in donNatures %}
+            {% if donNature.typeDon == "nature" %}
+        {% for user in users %}
+            {% if user.id == donNature.userId %}
+                <tr class="table-primary">
+{#                    <td><a href="{{ path('donnature_show', { 'id': donNature.id }) }}">{{ donNature.id }}</a></td>#}
+                    <td>{{ user.username }}</td>
+                    <td>{{ donNature.typeDon }}</td>
+                    <td>{{ donNature.cibleDon }}</td>
+                    <td></td>
+                    <td>{{ donNature.libelleDonNature }}</td>
+                    <td>{{ donNature.categorieDonNature }}</td>
+                    <td>{% if donNature.dateDon %}{{ donNature.dateDon|date('Y-m-d') }}{% endif %}</td>
+                    <td>
+                        <a class="btn btn-outline-primary" href="{{ path('donnature_show', { 'id': donNature.id }) }}">show</a>
+                        <hr class = "my-4">
+{#                        <a class="btn btn-outline-primary" href="{{ path('donnature_edit', { 'id': donNature.id }) }}">edit</a>#}
+
+                    </td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+            {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

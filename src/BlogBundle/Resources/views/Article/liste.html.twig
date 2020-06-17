@@ -1,0 +1,35 @@
+{% extends '@Blog/back.html.twig' %}
+
+{% block title %} Article{% endblock %}
+{% block container %}
+
+    <div class="container">
+        <div class="section-title">
+            <h1>Article List</h1>
+        </div>
+    <div class="section-title">
+
+        {% for art1 in art %}
+                <div class="row">
+                    <div class="col-md-12" style="margin-bottom: 5px;margin-top: 10px">
+
+
+
+                        <div class="card-box">
+                            <h2>{{ art1.titre }}</h2>
+                            <p><span>{{ art1.datePublication|date('d/m/Y') }}</span> / <span>{{ art1.auteur }}</span></p>
+                            <p>{{ art1.description }}</p>
+                            <a href="{{ path('admin_Article_modifier', {'id': art1.id}) }}" class="btn btn-light">modifier</a>
+                            <a href="{{ path('admin_Article_supprimer', {'id': art1.id}) }}" class="btn btn-light">supprimer</a>
+
+                        </div>
+                    
+                    </div>
+
+
+                </div>
+
+        {% endfor %}
+            </div>
+        </div>
+{% endblock  %}

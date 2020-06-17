@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <!--title-->
+    <title>Humanity | Bootstrap Responsive Onepage HTML Template</title>
+
+        <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}"/>
+
+
+
+</head><!--/head-->
+
+<body>
+<div class="body-container">
+<div class="chat-container">
+
+    <aside class="chat-sidebar">
+        <nav class="chat-left-sidebar">
+            <h2>
+                <a href="{{ path('don_homepage') }}" class="afsy-logo">AFSY</a>
+            </h2>
+        </nav>
+        <nav class="chat-right-sidebar">
+            <h1>HS Chat</h1>
+            <ul id="ws-channels-list" class="channels-list"></ul>
+        </nav>
+    </aside>
+    <main class="main-content">
+        <header class="main-content-header">
+            <p class="warning">
+                <strong>Bienvenue sur HandShake Chat</strong> .
+
+            </p>
+            <aside class="user-menu">
+                <i id="ws-connection-status" class="connection-status"></i>
+                <span class="username" id="ws-username"></span>
+            </aside>
+        </header>
+        <ul id="ws-content-receiver" class="chat-messages-list"></ul>
+        <div class="message-form">
+            <label for="chat-message">Type your message</label>
+            <input type="text" id="ws-content-to-send" name="chat-message"
+                   placeholder="Type your message" autocomplete="off" />
+            <button id="ws-send-content">Send</button>
+        </div>
+    </main>
+</div>
+
+
+
+
+
+{#<div class="container">#}
+{#    <h1>AFSY - WebSockets and Symfony</h1>#}
+
+
+{#    <div id="ws-content-receiver"></div>#}
+{#    <input type="text" id="ws-content-to-send" placeholder=" Your message..."/>#}
+{#    <button id="ws-send-content">Send</button>#}
+{#</div>#}
+
+
+</div>
+</body>
+
+<script type="text/javascript">
+    var wsUrl = '{{ ws_url }}';
+</script>
+<script type="text/javascript" src="{{ asset('bundles/don/js/sf-websocket.js') }}"></script>
+
+
+</html>

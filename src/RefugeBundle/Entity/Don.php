@@ -1,7 +1,7 @@
 <?php
 
 namespace RefugeBundle\Entity;
-
+use UserBundle\Entity\User;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -136,9 +136,9 @@ class Don
     /**
      * @var User
      *
-     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="userId", referencedColumnName="userId")
+     *   @ORM\JoinColumn(name="userId", referencedColumnName="id")
      * })
      */
     private $userid;

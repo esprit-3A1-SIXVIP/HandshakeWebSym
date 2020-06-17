@@ -44,7 +44,7 @@ class User extends BaseUser
      *
      * @ORM\Column(name="telephone", type="integer", nullable=true)
      */
-    protected $telephone = 'NULL';
+    protected $telephone ;
 
 
     /**
