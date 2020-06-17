@@ -1,0 +1,300 @@
+
+<!doctype html>
+<html>
+{% block header %}
+<head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Bootstrap Responsive Onepage HTML Template">
+        <meta name="author" content="">
+
+        <title> {% block title %}Humanity | Bootstrap Responsive Onepage HTML Template {% endblock %}</title>
+
+        <!--CSS-->
+        <link href="{{ asset('Front/css/bootstrap.min.css') }}"  rel="stylesheet">
+        <link href="{{ asset('Front/css/font-awesome.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('Front/css/animate.css') }}" rel="stylesheet">
+        <link href="{{ asset('Front/css/prettyPhoto.css') }}" rel="stylesheet">
+        <link href="{{ asset('Front/css/main.css') }}" rel="stylesheet">
+    <link id="css-preset" href="{{ asset('Front/css/presets/preset1.css')}}" rel="stylesheet">
+        <link href="{{ asset('Front/css/responsive.css') }}" rel="stylesheet">
+
+        <!--Google Fonts-->
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500,700,800,100,600' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,900' rel='stylesheet' type='text/css'>
+
+        <!--[if lt IE 9]>
+    <script src="{{ asset('Front/js/html5shiv.js') }}"></script>
+    <script src="{{ asset('Front/js/respond.min.js') }}"></script>
+    <![endif]-->
+
+        <!-- icons -->
+        <link rel="icon" href="{{ asset('Front/images/ico/favicon.ico')}}">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('Front/images/ico/apple-touch-icon-144-precomposed.html') }}">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('Front/images/ico/apple-touch-icon-114-precomposed.html') }}">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('Front/images/ico/apple-touch-icon-72-precomposed.html') }}">
+        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ asset('Front/images/ico/apple-touch-icon-57-precomposed.html') }}">
+
+</head><!--/head-->
+{% endblock %}
+{% block body %}
+<body>
+
+{% block nav %}
+    <!-- Page Loader -->
+    <div class="preloader">
+        <div id="loaderImage"></div>
+    </div>
+<header id="navigation">
+    <div class="navbar main-nav navbar-expand-lg" role="banner">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fa fa-align-justify"></i></span>
+            </button>
+            <a class="navbar-brand" href="{{ asset('Front/index.html')}}">
+                <h1><img class="img-fluid" src="{{ asset('Front/images/logo.png')}}" alt="logo"></h1>
+            </a>
+            <div class="top-bar">
+                <div class="dropdown language-dropdown">
+                    <a data-toggle="dropdown" href="#"><span class="change-text">English </span><i class="fa fa-angle-down"></i></a>
+                    <ul class="dropdown-menu language-change">
+                        <li><a href="#">English </a></li>
+                        <li><a href="#">German </a></li>
+                        <li><a href="#">French </a></li>
+                        <li><a href="#">Spanish </a></li>
+                    </ul>
+                </div>
+                <span class="contact-mail"><a href="#"><i class="fa fa-envelope-o"></i>
+                        <span class="__cf_email__" data-cfemail="adcec2c3d9ccced9edc5d8c0ccc3c4d9d483cec2c0">[email&#160;protected]</span></a></span>
+                <span><i class="fa fa-phone"></i> (123) 456-7890</span>
+                <div class="dropdown language-dropdown">
+                    <a data-toggle="dropdown" href="#"><span class="change-text">Login </span><i class="fa fa-angle-down"></i></a>
+                    <ul class="dropdown-menu language-change">
+                        <li><a href="login">login </a></li>
+                        <li><a href="register">s'inscrire </a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <nav id="navbarNav" class="collapse navbar-collapse navbar-right justify-content-end">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#tr-home"><span>Home</span></a></li>
+                    <li><a href="#who-we-are"><span>Who We Are</span></a></li>
+                    <li><a href="#cause-list"><span>Cause</span></a></li>
+                    <li><a href="#recent-post"><span>News & Blog</span></a></li>
+                    <li><a href="#our-member"><span>Volunteer</span></a></li>
+                    <li><a href="#photo-gallery"><span>Gallery</span></a></li>
+                    <li><a href="{{path('AjoutEvenement')}}"><span>Mes evenements</span></a></li>
+                </ul>
+            </nav>
+            <div class="search">
+                <form role="form">
+                    <i class="fa fa-search"></i>
+                    <div class="field-toggle">
+                        <input type="text" class="search-form" autocomplete="off" placeholder="Search">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</header><!--/#navigation-->
+{% endblock %}
+{% block container1 %}
+<div id="tr-home">
+    <div id="main-carousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#main-carousel" data-slide-to="1"></li>
+            <li data-target="#main-carousel" data-slide-to="2"></li>
+            <li data-target="#main-carousel" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item carousel-item active" style="background-image: url({{ asset('Front/images/home/1.jpg')}})">
+                <div class="carousel-caption container">
+                    <h1 class="animated rollIn">Empower Children Dream</h1>
+                    <p class="animated rollIn">Vestibulum vitae urna quis eros convallis hendrerit. Sed magna magna, congue vel dapibus a, sagittis in enim.</p>
+                    <a href="#who-we-are" id="tohash" class="animated rollIn btn btn-primary">Get Start</a>
+                    <a href="https://www.youtube.com/watch?v=oAVtOmhQ5D4" data-gallery="prettyPhoto" class="watch-video"><i class="fa fa-play"></i> Watch Video</a>
+                </div>
+            </div>
+            <div class="item carousel-item" style="background-image: url({{ asset('Front/images/home/2.jpg')}})">
+                <div class="carousel-caption container">
+                    <h1 class="animated rollIn">Empower Children Dream</h1>
+                    <p class="animated rollIn">Vestibulum vitae urna quis eros convallis hendrerit. Sed magna magna, congue vel dapibus a, sagittis in enim.</p>
+                    <a href="#who-we-are" id="tohash1" class="animated rollIn btn btn-primary">Get Start</a>
+                    <a href="https://www.youtube.com/watch?v=oAVtOmhQ5D4" data-gallery="prettyPhoto" class="watch-video"><i class="fa fa-play"></i> Watch Video</a>
+                </div>
+            </div>
+            <div class="item carousel-item" style="background-image: url({{ asset('Front/images/home/3.jpg')}})">
+                <div class="carousel-caption container">
+                    <h1 class="animated rollIn">Empower Children Dream</h1>
+                    <p class="animated rollIn">Vestibulum vitae urna quis eros convallis hendrerit. Sed magna magna, congue vel dapibus a, sagittis in enim.</p>
+                    <a href="#who-we-are" id="tohash2" class="animated rollIn btn btn-primary">Get Start</a>
+                    <a href="https://www.youtube.com/watch?v=oAVtOmhQ5D4" data-gallery="prettyPhoto" class="watch-video"><i class="fa fa-play"></i> Watch Video</a>
+                </div>
+            </div>
+            <div class="item carousel-item" style="background-image: url({{ asset('Front/images/home/4.jpg')}})">
+                <div class="carousel-caption container">
+                    <h1 class="animated rollIn">Empower Children Dream</h1>
+                    <p class="animated rollIn">Vestibulum vitae urna quis eros convallis hendrerit. Sed magna magna, congue vel dapibus a, sagittis in enim.</p>
+                    <a href="#who-we-are" id="tohash3" class="animated rollIn btn btn-primary">Get Start</a>
+                    <a href="https://www.youtube.com/watch?v=oAVtOmhQ5D4" data-gallery="prettyPhoto" class="watch-video"><i class="fa fa-play"></i> Watch Video</a>
+                </div>
+            </div>
+        </div>
+    </div> <!--/#main-carousel-->
+</div><!--/#carousel-wrapper-->
+{% endblock %}
+{% block container3 %}
+
+
+{% endblock %}
+{% block container4 %}
+
+{% endblock %}
+{% block container5 %}
+
+{% endblock %}
+{% block container6 %}
+
+{% endblock %}
+{% block container7 %}
+<div id="recent-post" class="padding-bottom padding-top-two">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-lg-3">
+                <div class="section-title event-title">
+             
+                    <h1>Events</h1>
+                </div>
+                <div id="event-carousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#event-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#event-carousel" data-slide-to="1"></li>
+                        <li data-target="#event-carousel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                    
+                        <div class="item carousel-item active">
+                        
+                             
+                               {% for events in evenements %}
+
+
+                            <a href="{{path('participer')}}" class="single-event">
+                                <div class="pull-left event-date">
+                                    <p>{{events.end|date('m')}}<span>{{events.end|date('d')}}</span></p>
+                                </div>
+                                <div class="event-info">
+                                    <p class="event-time">{{events.end|date('H:i')}}</p>
+                                    <p>{{events.title}}</p>
+                                </div>
+                            </a>
+                            
+                            {% endfor %}
+                            
+                        </div><!--/.item-->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-9">
+               
+                 
+            </div>
+        </div>
+    </div>
+</div><!--/#recent-post-->
+{% endblock %}
+{% block container8 %}
+
+{% endblock %}
+{% block container9 %}
+
+{% endblock %}
+{% block container10 %}
+
+{% endblock %}
+{% block container11 %}
+
+{% endblock %}
+{% block container12 %}
+
+{% endblock %}
+{% block container2 %}
+{% endblock  %}
+{% block footer %}
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <a href="index.html"><img class="img-fluid" src="{{ asset('Front/images/logo.png')}}" alt="" /></a>
+            </div>
+            <div class="col-md-4">
+                <div class="copyright-text">
+                    <p>&copy; copyright 2014 by <a href="#"> Humanity.</a> All rights reserved.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="footer-socials text-right">
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-vimeo-square"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer><!--/#footer-->
+
+<!--/Preset Style Chooser-->
+<div class="style-chooser">
+    <div class="style-chooser-inner">
+        <a href="#" class="toggler"><i class="fa fa-futbol-o fa-spin"></i></a>
+        <h4>Presets Color</h4>
+        <ul class="clearfix">
+            <li class="preset1 active" data-preset="1"><a href="#" data-color="preset1"></a></li>
+            <li class="preset2" data-preset="2"><a href="#" data-color="preset2"></a></li>
+            <li class="preset3" data-preset="3"><a href="#" data-color="preset3"></a></li>
+            <li class="preset4" data-preset="4"><a href="#" data-color="preset4"></a></li>
+            <li class="preset5" data-preset="5"><a href="#" data-color="preset5"></a></li>
+            <li class="preset6" data-preset="6"><a href="#" data-color="preset6"></a></li>
+            <li class="preset7" data-preset="7"><a href="#" data-color="preset7"></a></li>
+            <li class="preset8" data-preset="8"><a href="#" data-color="preset8"></a></li>
+        </ul>
+    </div>
+</div>
+<!--/End:Preset Style Chooser-->
+{% endblock %}
+<!--/#scripts-->
+{% block stylejavascrit %}
+
+<script data-cfasync="false" src="{{ asset('../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js')}}"></script><script src="{{ asset('Front/js/jquery.js')}}"></script>
+<script src="{{ asset('Front/js/popper.min.js')}}"></script>
+<script src="{{ asset('Front/js/bootstrap.min.js')}}"></script>
+<script src="{{ asset('Front/js/jquery.prettyPhoto.js')}}"></script>
+<script src="{{ asset('Front/js/jquery.parallax.js')}}"></script>
+<script src="{{ asset('Front/js/smoothscroll.js')}}"></script>
+<script src="{{ asset('Front/js/jquery.nav.js')}}"></script>
+<script src="{{ asset('Front/js/canvas.js')}}"></script>
+<script src="{{ asset('Front/js/preloader_canvas.js')}}"></script>
+<script src="{{ asset('Front/js/main.js')}}"></script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','../../www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-73239902-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+{% endblock %}
+</body>
+{% endblock %}
+</html>
+

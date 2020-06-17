@@ -1,0 +1,85 @@
+{%  extends 'back.html.twig' %}
+{% block header %}
+    {{ parent() }}
+    <link href="{{ asset('assets/libs/bootstrap-table/bootstrap-table.min.css')}}" rel="stylesheet" type="text/css" />
+
+{% endblock %}
+
+{%  block container %}
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card-box">
+                <h4 class="header-title">Afficher les Beneficiaires</h4>
+                <p class="sub-header mb-0">
+                    Beneficiaires
+                </p>
+
+                <table data-toggle="table"
+                       data-search="true"
+                       data-show-refresh="true"
+                       data-sort-name="id"
+                       data-page-list="[5, 10, 20]"
+                       data-page-size="5"
+                       data-pagination="true" data-show-pagination-switch="true" class="table-borderless">
+                    <thead class="thead-light">
+                    <tr>
+                        <th data-field="id" data-sortable="true" data-formatter="invoiceFormatter">ID</th>
+                        <th data-sortable="true">Propriétaire</th>
+                        <th data-field="name" data-sortable="true">Nom & Prenom</th>
+                        <th data-field="date" data-sortable="true" >Aide</th>
+                        <th data-sortable="true" >Email</th>
+                        <th data-sortable="true" >Date de naissance</th>
+                        <th data-sortable="true" >Ville</th>
+                        <th data-sortable="true" >Telephone</th>
+                        <th data-sortable="true" >Adresse Gps</th>
+                        <th data-field="amount" data-align="center" data-sortable="true" data-sorter="priceSorter">Role</th>
+                        <th data-align="center" data-sortable="true" >Type</th>
+                        <th data-align="center" data-sortable="true" data-formatter="statusFormatter">Supprimer</th>
+                    </tr>
+                    </thead>
+
+
+                    <tbody>
+
+                    {% for b in beneficiaire %}
+                            <td>{{ b.beneficiaireId }}</td>
+                            <td>{{ b.user }}</td>
+                            <td>{{ b.nombeneficiaire }} {{ b.prenombeneficiaire }}</td>
+                            <td>{{ b.aide.categorieAide }}</td>
+                            <td>{{ b.email }}</td>
+                            <td>{{ b.dateNaissance|date('d-m-Y') }}</td>
+                            <td>{{ b.ville }}</td>
+                            <td>{{ b.telephone }}</td>
+                            <td>{{ b.adresseGPS }}</td>
+                            <td>{{ b.role }}</td>
+                            {% if(b.role=="besoin") %}
+                            <td>{{ b.besoin }}</td>
+                            {% else %}
+                            <td>{{ b.nationalite }}</td>
+                            {% endif %}
+                            <td><a class="btn waves-effect waves-light btn-danger" href="{{ path('suppBen', {'beneficiaireid': b.beneficiaireid }) }}">Suprimer</a></td>
+                        </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+                <nav>
+                    <ul class="pagination">
+                        {{ knp_pagination_render(beneficiaire) }}
+                    </ul>
+                </nav>
+
+            </div> <!-- end card-box-->
+        </div> <!-- end col-->
+    </div>
+    <!-- end row-->
+{% endblock %}
+{% block javascript %}
+{{ parent() }}
+
+<script src="{{ asset('assets/libs/bootstrap-table/bootstrap-table.min.js')}}"></script>
+
+<!-- Init js -->
+<script src="{{ asset('assets/js/pages/bootstrap-tables.init.js')}}"></script>
+
+{% endblock %}

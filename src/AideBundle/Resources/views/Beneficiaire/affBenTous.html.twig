@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+{% block container %}
+    <a class="pull-right btn btn-primary" href="{{ path('ajoutBen') }}">Ajouter Beneficiaire</a>
+
+    <tbody>
+<div id="recent-post" class="padding-bottom padding-top-two">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-lg-9">
+                <div class="section-title">
+                    <h1>Beneficiaires</h1>
+                </div>
+                <div id="recent-post-carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="item carousel-item active">
+                            <div class="row">
+                                {% for b in Beneficiaire %}
+
+                                    <div class="col-md-6">
+                                        <div class="single-post">
+                                            <div class="pull-right post-details">
+
+                                                <p class="post-date">Nom & Prenom : {{ b.nombeneficiaire }} {{ b.prenombeneficiaire }}</p>
+                                                <span>Categorie : {{ b.aide.categorieAide }}</span>
+                                                <span>Email : {{ b.email }}</span>
+                                                <span>Date de naissance : {{ b.dateNaissance|date('d-m-Y') }}</span>
+                                                <span>Ville : {{ b.ville }}</span>
+                                                <span>Telephone : {{ b.telephone }}</span>
+                                                <span>Adresse : {{ b.adresseGPS }}</span>
+                                                <span>Role : {{ b.role }}</span>
+                                                {% if(b.role=="besoin") %}
+                                                    <span>{{ b.besoin }}</span>
+                                                {% else %}
+                                                    <span>{{ b.nationalite }}</span>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div><!--/.item-->
+                        <nav>
+                            <ul class="pagination">
+                                {{ knp_pagination_render(Beneficiaire) }}
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--/#recent-post-->
+{% endblock %}

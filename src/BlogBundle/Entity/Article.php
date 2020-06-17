@@ -1,7 +1,9 @@
 <?php
 
 namespace BlogBundle\Entity;
-use UserBundle\Entity\User;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -42,12 +44,6 @@ class Article
      */
     private $auteur;
 
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="datePublication", type="date")
-     */
-    private $datePublication;
 
     /**
      * @var int
@@ -64,14 +60,18 @@ class Article
     private $nbrlike;
 
     /**
-     *  @var User
-     *
-     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
-     * @ORM\JoinColumns({
-     * @ORM\JoinColumn(name="userId", referencedColumnName="id")
-     * })
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $userId;
+    private $myfile;
+
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="datePublication", type="date")
+     */
+    private $datePublication;
+
 
     /**
      * @return int
@@ -137,21 +137,7 @@ class Article
         $this->auteur = $auteur;
     }
 
-    /**
-     * @return \DateTime
-     */
-    public function getDatePublication()
-    {
-        return $this->datePublication;
-    }
 
-    /**
-     * @param \DateTime $datePublication
-     */
-    public function setDatePublication($datePublication)
-    {
-        $this->datePublication = $datePublication;
-    }
 
     /**
      * @return int
@@ -184,21 +170,46 @@ class Article
     {
         $this->nbrlike = $nbrlike;
     }
-
     /**
-     * @return User
+     * Set datePublication
+     *
+     * @param \DateTime $datePublication
+     *
+     * @return Article
      */
-    public function getUserId()
+    public function setDatePublication($datePublication)
     {
-        return $this->userId;
+        $this->datePublication = $datePublication;
+
+        return $this;
     }
 
     /**
-     * @param User $userId
+     * Get datePublication
+     *
+     * @return \DateTime
      */
-    public function setUserId($userId)
+    public function getDatePublication()
     {
-        $this->userId = $userId;
+        return $this->datePublication;
+    }
+    /**
+     * @return string
+     */
+    public function getMyfile()
+    {
+        return $this->myfile;
+    }
+
+    /**
+     * @param string $myfile
+     * @return Article
+     */
+    public function setMyfile(string $myfile)
+    {
+        $this->myfile = $myfile;
+
+        return $this;
     }
 
 

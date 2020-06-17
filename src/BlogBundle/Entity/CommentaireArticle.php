@@ -32,7 +32,7 @@ class CommentaireArticle
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="datePublication", type="date")
+     * @ORM\Column(name="datePublication", type="datetime")
      */
     private $datePublication;
 

@@ -1,0 +1,24 @@
+don_homepage:
+    path:     /
+    defaults: { _controller: DonBundle:Default:index }
+
+donadmin_homepage:
+    path:     /donadmin
+    defaults: { _controller: DonBundle:Default:affichageAdmin}
+
+historique:
+    path:     /historique
+    defaults: { _controller: DonBundle:Default:historique}
+
+historiqueAdmin:
+    path:     /historiqueAdmin
+    defaults: { _controller: DonBundle:Default:historiqueAdmin}
+
+statistique:
+    path:     /statistique
+    defaults: { _controller: DonBundle:Default:statistique}
+
+chat:
+    path:     /chat
+    defaults: { _controller: DonBundle:Default:chat}
+

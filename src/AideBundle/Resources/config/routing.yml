@@ -1,0 +1,56 @@
+aide_homepage:
+    path:     /
+    defaults: { _controller: AideBundle:Default:index }
+ajoutAide:
+    path:     /AjouterAide
+    defaults: { _controller: AideBundle:Aide:ajoutAide }
+modifAide:
+    path:     /ModifierAide/{id}
+    defaults: { _controller: AideBundle:Aide:modifAide }
+modifAideUser:
+    path:     /ModifierAideUser/{id}
+    defaults: { _controller: AideBundle:Aide:modifAideUser }
+affAide:
+    path:     /AfficherAide
+    defaults: { _controller: AideBundle:Aide:affAide }
+affAideApp:
+    path:     /AfficherAideApp
+    defaults: { _controller: AideBundle:Aide:affAideApp }
+affAideClient:
+    path:     /AfficherAideClient
+    defaults: { _controller: AideBundle:Aide:affAideClient }
+suppAide:
+    path:   /SupprimerAide/{id}
+    defaults: { _controller: AideBundle:Aide:suppAide }
+suppAideC:
+    path:   /SupprimerAideC/{id}
+    defaults: { _controller: AideBundle:Aide:suppAideC }
+approved:
+    path:   /approved/{id}
+    defaults: { _controller: AideBundle:Aide:approved }
+
+
+ajoutBen:
+    path:     /AjouterBen
+    defaults: { _controller: AideBundle:Beneficiaire:ajoutBen }
+modifBen:
+    path:     /ModifierBen/{beneficiaireid}
+    defaults: { _controller: AideBundle:Beneficiaire:modifBen }
+modifBenUser:
+    path:     /ModifierBenUser/{beneficiaireid}
+    defaults: { _controller: AideBundle:Beneficiaire:modifBen }
+affBen:
+    path:     /AfficherBen
+    defaults: { _controller: AideBundle:Beneficiaire:affBen }
+affBenC:
+    path:     /AfficherBenClient
+    defaults: { _controller: AideBundle:Beneficiaire:affBenClient }
+affBenTous:
+        path:     /AfficherBenTous
+        defaults: { _controller: AideBundle:Beneficiaire:affBenTous }
+suppBen:
+    path:   /SupprimerBen/{beneficiaireid}
+    defaults: { _controller: AideBundle:Beneficiaire:suppBen }
+suppBenC:
+    path:   /SupprimerBenC/{beneficiaireid}
+    defaults: { _controller: AideBundle:Beneficiaire:suppBenC }
