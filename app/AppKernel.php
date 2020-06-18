@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new RefugeBundle\RefugeBundle(),
             new UserBundle\UserBundle(),
+            new EvenementBundle\EvenementBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new FOS\CKEditorBundle\FOSCKEditorBundle(),
             new Ob\HighchartsBundle\ObHighchartsBundle(),
